@@ -80,7 +80,7 @@ You can view all requests in your Contact page.
 
   return (
     <section id="home" className="mt-4">
-      <div className="d-flex justify-content-end align-items-center mb-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
         <button 
           onClick={handleResumeRequest}
           className="btn btn-primary btn-lg shadow-sm me-3"
@@ -96,6 +96,9 @@ You can view all requests in your Contact page.
           <i className="fas fa-download me-2"></i>
           My Resume
         </button>
+        <h1 className="mb-0 text-center flex-grow-1" style={{ color: '#111', fontWeight: 700 }}>
+          Hello, I'm <strong>Shrirang!</strong>
+        </h1>
         <img 
           src={process.env.PUBLIC_URL + '/assets/images/SAlogo.jpg'} 
           alt="SA Logo" 
@@ -232,9 +235,6 @@ You can view all requests in your Contact page.
           </div>
         </>
       )}
-
-      {/* Standalone Heading */}
-      <h1 className="mb-3 text-center display-5 fw-bold">Hello, I'm <strong>Shrirang!</strong></h1>
 
       {/* Intro Text Card */}
       <div className="card p-4 mb-4 shadow-sm bg-white bg-opacity-75 border-0">
