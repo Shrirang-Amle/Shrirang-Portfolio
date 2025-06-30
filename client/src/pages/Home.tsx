@@ -233,9 +233,11 @@ You can view all requests in your Contact page.
         </>
       )}
 
+      {/* Standalone Heading */}
+      <h1 className="mb-3 text-center display-5 fw-bold">Hello, I'm <strong>Shrirang!</strong></h1>
+
       {/* Intro Text Card */}
       <div className="card p-4 mb-4 shadow-sm bg-white bg-opacity-75 border-0">
-        <h1 className="mb-3 text-center display-5 fw-bold">Hello, I'm <strong>Shrirang!</strong></h1>
         <div className="mx-auto" style={{ maxWidth: 700 }}>
           <p className="fs-5 text-justify" style={{ textAlign: 'justify' }}>
             Welcome to my portfolio! I'm Shrirang Amle, a passionate Full Stack Web Developer with a strong background in building modern, responsive, and user-friendly web applications. I love turning ideas into reality using the latest technologies and best practices.

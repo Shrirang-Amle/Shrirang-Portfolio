@@ -2,19 +2,23 @@
 # Exit on error
 set -o errexit
 
-# Install dependencies for server
+echo "Installing server dependencies..."
 npm install
 
-# Navigate to client directory and install dependencies
+echo "Moving to client directory..."
 cd ../client
+
+echo "Installing client dependencies..."
 npm install
 
-# Build the client
+echo "Building client..."
 npm run build
 
-# Create client/build directory in server
+echo "Creating build directory in server..."
 cd ../server
 mkdir -p client/build
 
-# Copy built client files to server/client/build
-cp -r ../client/build/* client/build/ 
+echo "Copying build files..."
+cp -r ../client/build/* ./client/build/
+
+echo "Build script completed!" 

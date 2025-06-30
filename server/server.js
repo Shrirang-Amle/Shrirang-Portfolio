@@ -8,11 +8,13 @@ const app = express();
 let contactMessages = [];
 let messageId = 1;
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+// Middleware
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, './client/build')));
 
 // API endpoint
 app.get('/api/projects', (req, res) => {
@@ -70,7 +72,9 @@ app.delete('/api/contact/:id', async (req, res) => {
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build/index.html'));
+  const indexPath = path.join(__dirname, './client/build/index.html');
+  console.log('Serving index.html from:', indexPath);
+  res.sendFile(indexPath);
 });
 
 const PORT = process.env.PORT || 5000;
