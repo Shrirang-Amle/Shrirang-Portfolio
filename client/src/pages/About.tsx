@@ -2,7 +2,7 @@ import React from 'react';
 
 const About: React.FC = () => (
   <section id="about" className="mt-5">
-    <h2 className="text-center mb-5">About Me</h2>
+    <h2 className="text-center mb-5" style={{ color: 'black' }}>About Me</h2>
     
     {/* Personal Introduction */}
     <div className="card p-4 mb-4 shadow-sm bg-white bg-opacity-75 border-0">

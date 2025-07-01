@@ -2,7 +2,7 @@ import React from 'react';
 
 const Stack: React.FC = () => (
   <section id="stack" className="mt-5">
-    <h2 className="text-center mb-5">Technical Stack</h2>
+    <h2 className="text-center mb-5" style={{ color: 'black' }}>Technical Stack</h2>
     
     {/* Frontend Technologies */}
     <div className="card p-4 mb-4 shadow-sm bg-white bg-opacity-75 border-0">

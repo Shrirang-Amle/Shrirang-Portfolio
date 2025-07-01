@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faHackerrank, faFreeCodeCamp } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faMoon, faSun, faChevronLeft, faChevronRight, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +9,24 @@ import Projects from './pages/Projects';
 import Stack from './pages/Stack';
 import Contact from './pages/Contact';
 import './App.css';
+
+function AnimatedMainContent({ children, darkMode, sidebarCollapsed }: { children: React.ReactNode, darkMode: boolean, sidebarCollapsed: boolean }) {
+  const location = useLocation();
+  const [fadeKey, setFadeKey] = React.useState(location.pathname);
+
+  React.useEffect(() => {
+    setFadeKey(location.pathname + Date.now());
+  }, [location]);
+
+  return (
+    <main
+      key={fadeKey}
+      className={`main-content px-4${darkMode ? ' dark-main' : ''}${sidebarCollapsed ? ' sidebar-collapsed' : ''} fade-in`}
+    >
+      {children}
+    </main>
+  );
+}
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -77,7 +95,7 @@ function App() {
             </div>
           </div>
         </nav>
-        <main className={`main-content px-4${darkMode ? ' dark-main' : ''}${sidebarCollapsed ? ' sidebar-collapsed' : ''}`}>
+        <AnimatedMainContent darkMode={darkMode} sidebarCollapsed={sidebarCollapsed}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -85,7 +103,7 @@ function App() {
             <Route path="/stack" element={<Stack />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
-        </main>
+        </AnimatedMainContent>
       </div>
     </Router>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Home: React.FC = () => {
   const [showResumeModal, setShowResumeModal] = useState(false);
@@ -9,6 +9,20 @@ const Home: React.FC = () => {
     company: '',
     reason: ''
   });
+
+  // Typing animation for greeting
+  const greeting = "Hello, I'm Shrirang!";
+  const [displayedGreeting, setDisplayedGreeting] = useState('');
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayedGreeting(greeting.slice(0, i + 1));
+      i++;
+      if (i === greeting.length) clearInterval(interval);
+    }, 70);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleResumeRequest = () => {
     setShowResumeModal(true);
@@ -52,7 +66,7 @@ Timestamp: ${new Date(request.timestamp).toLocaleString()}
 You can view all requests in your Contact page.
     `;
     
-    const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:shrirang.amle2004@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink);
   };
 
@@ -81,6 +95,10 @@ You can view all requests in your Contact page.
   return (
     <section id="home" className="mt-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
+        
+        <h1 className="mb-0 text-center flex-grow-1" style={{ color: '#111', fontWeight: 700, letterSpacing: '1px' }}>
+          <span className="typing-greeting">{displayedGreeting}</span>
+        </h1>
         <button 
           onClick={handleResumeRequest}
           className="btn btn-primary btn-lg shadow-sm me-3"
@@ -96,9 +114,6 @@ You can view all requests in your Contact page.
           <i className="fas fa-download me-2"></i>
           My Resume
         </button>
-        <h1 className="mb-0 text-center flex-grow-1" style={{ color: '#111', fontWeight: 700 }}>
-          Hello, I'm <strong>Shrirang!</strong>
-        </h1>
         <img 
           src={process.env.PUBLIC_URL + '/assets/images/SAlogo.jpg'} 
           alt="SA Logo" 

@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="mt-5">
-      <h2 className="text-center mb-5">Contact Me</h2>
+      <h2 className="text-center mb-5" style={{ color: 'black' }}>Contact Me</h2>
       
       {/* Contact Messages Section */}
       <div className="card p-4 mb-4 shadow-sm bg-white bg-opacity-75 border-0">
