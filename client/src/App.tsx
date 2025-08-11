@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faHackerrank, faFreeCodeCamp } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faMoon, faSun, faChevronLeft, faChevronRight, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
+import { Analytics } from '@vercel/analytics/react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -104,6 +105,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </AnimatedMainContent>
+        <Analytics />
       </div>
     </Router>
   );
