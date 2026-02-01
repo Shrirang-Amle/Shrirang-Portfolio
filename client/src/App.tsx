@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faHackerrank, faFreeCodeCamp } from '@fortawesome/free-brands-svg-icons';
-import { faCode, faMoon, faSun, faChevronLeft, faChevronRight, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin, faHackerrank } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faMoon, faSun, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Analytics } from '@vercel/analytics/react';
 import Home from './pages/Home';
 import About from './pages/About';
