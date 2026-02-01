@@ -9,7 +9,7 @@ const Projects: React.FC = () => (
       <div className="col-md-6 mb-4">
         <div className="card h-100">
           <img
-            src={process.env.PUBLIC_URL + '/assets/images/Watermark.jpg'}
+            src={process.env.PUBLIC_URL + '/assets/images/Watermark.png'}
             className="card-img-top"
             alt="Watermark Project"
           />
@@ -45,7 +45,7 @@ const Projects: React.FC = () => (
       <div className="col-md-6 mb-4">
         <div className="card h-100">
           <img
-            src={process.env.PUBLIC_URL + '/assets/images/krishisetu.png'}
+            src={process.env.PUBLIC_URL + '/assets/images/krishisetu.jpg'}
             className="card-img-top"
             alt="KrishiSetu"
           />
