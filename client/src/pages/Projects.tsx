@@ -9,7 +9,7 @@ const Projects: React.FC = () => (
       <div className="col-md-6 mb-4">
         <div className="card h-100">
           <img
-            src={process.env.PUBLIC_URL + '/assets/images/Watermark.png'}
+            src={process.env.PUBLIC_URL + '/assets/images/Watermark.jpg'}
             className="card-img-top"
             alt="Watermark Project"
           />
